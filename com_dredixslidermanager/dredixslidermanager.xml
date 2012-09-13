@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.6.0" method="upgrade" client="admin">
+    <name>com_dredixslidermanager</name>
+    <creationDate>September 2012</creationDate>
+    <author>Andre Dixon</author>
+	<copyright>Copyright (C) 2012 dredix.net, All rights reserved.</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>dredix@dredix.net</authorEmail>
+	<authorUrl>http://www.dredix.net</authorUrl>
+    <version>1</version>
+	<description>Create slides source for Dredix Slider modules</description>
+	
+	<install>
+		<sql>
+            <file charset="utf8" driver="mysql">sql/install.sql</file>
+        </sql>
+    </install>
+	<uninstall>
+		<sql>
+            <file charset="utf8" driver="mysql">sql/uninstall.sql</file>
+        </sql>
+    </uninstall>
+    <update>
+		<schemas>
+			<schemapath type="mysql">sql/updates</schemapath>
+		</schemas>
+	</update>
+	
+    <administration>
+    	
+    	<menu img="components/com_dredixslidermanager/assets/icon-16-dredixslidermanager.png">COM_DREDIXSLIDERMANAGER</menu>
+		<submenu>
+			<menu link="option=com_dredixslidermanager&amp;view=items" alt="Dredix Slide Manger/Slides" img="components/com_dredixslidermanager/assets/icon-16-menu-slides.png">COM_DREDIXSLIDERMANAGER_SLIDES</menu>
+			<menu link="option=com_categories&amp;extension=com_dredixslidermanager" alt="Dredix Slide Manger/Categories" img="class:category">COM_DREDIXSLIDERMANAGER_CATEGORIES</menu>
+		</submenu>
+		
+    	<files folder="administrator">
+        	<filename>dredixslidermanager.php</filename>
+            <filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>config.xml</filename>
+			<filename>access.xml</filename>
+			<folder>assets</folder>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>language</folder>
+			<folder>lib</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        
+    </administration>
+    
+    <scriptfile>script.dredixslidermanager.php</scriptfile>
+    
+	<config />
+	<files />
+	
+</extension>
