@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<extension type="module" version="1.7" client="site" method="">
+  <name>Dredix Simple jQuery Slider</name>
+  <author>Andre Dixon</author>
+  <creationDate>September 2012</creationDate>
+  <copyright>Copyright (C) 2012 Andre Dixon.</copyright>
+  <license>GNU General Public License version 2 or later.</license>
+  <authorEmail>dredix@dredix.net</authorEmail>
+  <authorUrl>www.dredix.net</authorUrl>
+  <version>1.0.0</version>
+  <description>Dredix Simple jQuery Slider which is based on the Simple jQuery Slider</description>
+  <files>
+    <filename module="mod_dredixsimpleslider">mod_dredixsimpleslider.php</filename>
+    <filename>mod_dredixsimpleslider.xml</filename>
+    <filename>index.html</filename>
+  </files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="category" type="sql" default="10" label="Category" key_field="id" value_field="title" query="SELECT `id`, `title` FROM #__categories WHERE extension = 'com_dredixslidermanager';" />
+
+				<field name="mode" type="radio" default="slide" label="Mode" description="What should be the movement direction when going to the next slide?">
+					<option value="horizontal">Horizontal</option>
+					<option value="vertical">Vertical</option>
+					<option value="fade">Fade</option>
+				</field>
+				<field name="autoplay" type="radio" default="true" label="Auto Play" description="Should the slides automatically play?">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="hoverpause" type="radio" default="false" label="Pause on hover" description="Should the slides pause when the mouse hovers over?">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="speed" type="text" default="3000" label="Slide Speed" description="How fast should it move to the next slide" filter="integer" />
+				<field name="controlsonend" type="radio" default="true" label="Show controls at end">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="showstartstop" type="radio" default="true" label="Show Start/Stop" description="Show the start/stop control?">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="showpager" type="radio" default="true" label="Show Pager" description="Show the slide numbers be shown?">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="pagertype" type="radio" default="full" label="Pager Type">
+					<option value="full">Full</option>
+					<option value="short">Short</option>
+				</field>
+				<field name="pagerposition" type="radio" default="bottom" label="Pager Position" description="Where should the pager be located?">
+					<option value="bottom">Bottom</option>
+					<option value="top">Top</option>
+				</field>
+				<field name="slider_width" type="integer" default="700" label="Slider Width" description="What should the width of the slide be?" first="1" last="2000" step="1" />
+				<field name="slider_height" type="integer" default="300" label="Slider Height" description="What should the height of the slider be?" first="1" last="1000" step="1" />
+				
+				<field name="imageposition" type="radio" default="right" label="Image Position" description="Where should the image be located?">
+					<option value="left">Left</option>
+					<option value="right">Right</option>
+				</field>
+				<field name="image_rounded" type="integer" default="0" label="Round Image Corners" description="Use to adjust how rounded the image corners are (Not supported by IE)?" first="0" last="30" step="1" />
+			</fieldset>
+			
+			<fieldset name="customcss" label="Custom CSS">
+				<field name="container_css_suffix" type="text" default="" label="Container CSS Suffix" description="" />
+				<field name="custcss" type="textarea" default="" label="CSS" description="Input your custom CSS here." rows="10" cols="40" />
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field name="jqueryinclude" type="list" default="google" label="Include jQuery From" description="Where should the jQuery be included from?">
+					<option value="local">Local</option>
+					<option value="jquery">jQuery Site</option>
+					<option value="google">Google Hosted</option>
+					<option value="none">None</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
